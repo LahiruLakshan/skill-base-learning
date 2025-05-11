@@ -21,11 +21,6 @@ import Journal from "./pages/Journal/Journal";
 import Offer from "./pages/Offer/Offer";
 import Payment from "./pages/payment/Payment";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
-import Shop from "./pages/Shop/Shop";
-import AddCloth from "./pages/AddCloth/AddCloth";
-import Chatbot from "./pages/Chatbot/Chatbot";
-import TryOn from "./pages/TryOn/TryOn";
-import RecommendSize from "./pages/RecommendSize/RecommendSize";
 import LearningPathApp from "./pages/PreQuizComponent/PreQuizComponent";
 import QuizComponent from "./pages/QuizComponent/QuizComponent";
 import ModulesPage from "./pages/ModulesPage/ModulesPage";
@@ -51,13 +46,8 @@ const router = createBrowserRouter(
       <Route path="/" element={<Layout />}>
         {/* ==================== Header Navlink Start here =================== */}
         <Route path="/" element={<Home />}></Route>
-        <Route path="/shop" element={<Shop />}></Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
-        <Route path="/add-cloth" element={<AddCloth />}></Route>
-        <Route path="/chatbot" element={<Chatbot />}></Route>
-        <Route path="/try-on" element={<TryOn />}></Route>
-        <Route path="/recommended-size" element={<RecommendSize />}></Route>
         <Route path="/journal" element={<Journal />}></Route>
         {/* ==================== Header Navlink End here ===================== */}
         <Route path="/offer" element={<Offer />}></Route>
