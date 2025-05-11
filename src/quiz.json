@@ -1,0 +1,1544 @@
+{
+    "questions": [
+      {
+        "answer": "Voltage",
+        "options": ["Voltage", "Current", "Resistance", "Power"],
+        "question": "Which electrical quantity is measured in volts?"
+      },
+      {
+        "answer": "Current",
+        "options": ["Voltage", "Current", "Resistance", "Power"],
+        "question": "Which electrical quantity represents the flow of electric charge?"
+      },
+      {
+        "answer": "Resistance",
+        "options": ["Voltage", "Current", "Resistance", "Power"],
+        "question": "Which electrical quantity opposes the flow of electric current?"
+      },
+      {
+        "answer": "Ohm's Law",
+        "options": ["Newton's Law", "Ohm's Law", "Faraday's Law", "Coulomb's Law"],
+        "question": "Which law relates voltage, current, and resistance?"
+      },
+      {
+        "answer": "Direct Voltage (DC)",
+        "options": ["Direct Voltage (DC)", "Alternating Voltage (AC)", "Resistive Voltage", "Inductive Voltage"],
+        "question": "Which type of voltage flows in one direction, such as in a battery?"
+      },
+      {
+        "answer": "Alternating Current (AC)",
+        "options": ["Direct Current (DC)", "Alternating Current (AC)", "Resistive Current", "Inductive Current"],
+        "question": "Which type of current changes direction periodically, such as in household electricity?"
+      },
+      {
+        "answer": "Voltmeter",
+        "options": ["Voltmeter", "Ammeter", "Ohmmeter", "Wattmeter"],
+        "question": "Which instrument is used to measure voltage?"
+      },
+      {
+        "answer": "Ammeter",
+        "options": ["Voltmeter", "Ammeter", "Ohmmeter", "Wattmeter"],
+        "question": "Which instrument is used to measure electric current?"
+      },
+      {
+        "answer": "Ohmmeter",
+        "options": ["Voltmeter", "Ammeter", "Ohmmeter", "Wattmeter"],
+        "question": "Which instrument is used to measure resistance?"
+      },
+      {
+        "answer": "V = I × R",
+        "options": ["V = I × R", "V = I / R", "V = R / I", "V = I + R"],
+        "question": "What is the formula for Ohm's Law?"
+      },
+      {
+        "answer": "2A",
+        "options": ["1A", "2A", "3A", "4A"],
+        "question": "If the voltage is 12V and the resistance is 6Ω, what is the current?"
+      },
+      {
+        "answer": "Conductors",
+        "options": ["Conductors", "Insulators", "Semiconductors", "Resistors"],
+        "question": "Which type of materials have low resistance and allow easy flow of electric current?"
+      },
+      {
+        "answer": "Insulators",
+        "options": ["Conductors", "Insulators", "Semiconductors", "Resistors"],
+        "question": "Which type of materials have high resistance and oppose the flow of electric current?"
+      },
+      {
+        "answer": "Higher temperature usually increases resistance in metals",
+        "options": ["Higher temperature decreases resistance in metals", "Higher temperature usually increases resistance in metals", "Temperature has no effect on resistance", "Resistance is only affected by material type"],
+        "question": "How does temperature affect resistance in metals?"
+      },
+      {
+        "answer": "Thicker wires have less resistance",
+        "options": ["Thicker wires have more resistance", "Thicker wires have less resistance", "Wire thickness does not affect resistance", "Thicker wires increase voltage"],
+        "question": "How does the thickness of a wire affect its resistance?"
+      },
+      {
+        "answer": "Longer wires have more resistance",
+        "options": ["Longer wires have less resistance", "Longer wires have more resistance", "Wire length does not affect resistance", "Longer wires decrease voltage"],
+        "question": "How does the length of a wire affect its resistance?"
+      },
+      {
+        "answer": "Battery",
+        "options": ["Battery", "Resistor", "Capacitor", "Inductor"],
+        "question": "Which component is commonly used as a source of direct voltage (DC)?"
+      },
+      {
+        "answer": "Power grid",
+        "options": ["Battery", "Power grid", "Capacitor", "Inductor"],
+        "question": "Which source provides alternating current (AC)?"
+      },
+      {
+        "answer": "Electric heaters",
+        "options": ["Electric heaters", "Batteries", "Capacitors", "Inductors"],
+        "question": "Which application primarily uses resistance to generate heat?"
+      },
+      {
+        "answer": "Fuses",
+        "options": ["Fuses", "Batteries", "Capacitors", "Inductors"],
+        "question": "Which component uses resistance to protect circuits from overcurrent?"
+      },
+      {
+        "answer": "Voltage",
+        "options": ["Voltage", "Current", "Resistance", "Power"],
+        "question": "Which electrical quantity is also known as electric potential difference?"
+      },
+      {
+        "answer": "Amperes",
+        "options": ["Volts", "Amperes", "Ohms", "Watts"],
+        "question": "What is the unit of measurement for electric current?"
+      },
+      {
+        "answer": "Ohms",
+        "options": ["Volts", "Amperes", "Ohms", "Watts"],
+        "question": "What is the unit of measurement for resistance?"
+      },
+      {
+        "answer": "Battery",
+        "options": ["Battery", "Generator", "Resistor", "Capacitor"],
+        "question": "Which device creates voltage by converting chemical energy into electrical energy?"
+      },
+      {
+        "answer": "Generator",
+        "options": ["Battery", "Generator", "Resistor", "Capacitor"],
+        "question": "Which device creates voltage by converting mechanical energy into electrical energy?"
+      },
+      {
+        "answer": "Direct Current (DC)",
+        "options": ["Direct Current (DC)", "Alternating Current (AC)", "Resistive Current", "Inductive Current"],
+        "question": "Which type of current flows in one direction, such as in a battery?"
+      },
+      {
+        "answer": "Alternating Voltage (AC)",
+        "options": ["Direct Voltage (DC)", "Alternating Voltage (AC)", "Resistive Voltage", "Inductive Voltage"],
+        "question": "Which type of voltage changes direction periodically, such as in household electricity?"
+      },
+      {
+        "answer": "Copper",
+        "options": ["Copper", "Rubber", "Glass", "Plastic"],
+        "question": "Which material is a good conductor of electricity?"
+      },
+      {
+        "answer": "Rubber",
+        "options": ["Copper", "Rubber", "Glass", "Plastic"],
+        "question": "Which material is a good insulator of electricity?"
+      },
+      {
+        "answer": "Resistance increases",
+        "options": ["Resistance increases", "Resistance decreases", "Resistance remains the same", "Resistance becomes zero"],
+        "question": "What happens to the resistance of a metal wire if its length is doubled?"
+      },
+      {
+        "answer": "Resistance decreases",
+        "options": ["Resistance increases", "Resistance decreases", "Resistance remains the same", "Resistance becomes zero"],
+        "question": "What happens to the resistance of a wire if its thickness is doubled?"
+      },
+      {
+        "answer": "Resistance increases",
+        "options": ["Resistance increases", "Resistance decreases", "Resistance remains the same", "Resistance becomes zero"],
+        "question": "What happens to the resistance of a metal wire if its temperature increases?"
+      },
+      {
+        "answer": "Power",
+        "options": ["Voltage", "Current", "Resistance", "Power"],
+        "question": "Which electrical quantity is measured in watts?"
+      },
+      {
+        "answer": "P = V × I",
+        "options": ["P = V × I", "P = V / I", "P = I / V", "P = V + I"],
+        "question": "What is the formula for electrical power?"
+      },
+      {
+        "answer": "24W",
+        "options": ["12W", "24W", "36W", "48W"],
+        "question": "If the voltage is 12V and the current is 2A, what is the power?"
+      },
+      {
+        "answer": "Electric motors",
+        "options": ["Electric motors", "Batteries", "Capacitors", "Inductors"],
+        "question": "Which application primarily uses electric current to produce mechanical motion?"
+      },
+      {
+        "answer": "Lighting",
+        "options": ["Lighting", "Batteries", "Capacitors", "Inductors"],
+        "question": "Which application primarily uses electric current to produce light?"
+      },
+      {
+        "answer": "Circuit protection",
+        "options": ["Circuit protection", "Power generation", "Lighting", "Mechanical motion"],
+        "question": "What is the primary purpose of a fuse in an electrical circuit?"
+      },
+      {
+        "answer": "Resistor",
+        "options": ["Resistor", "Battery", "Capacitor", "Inductor"],
+        "question": "Which component is used to control the flow of current in a circuit?"
+      },
+      {
+        "answer": "Capacitor",
+        "options": ["Resistor", "Battery", "Capacitor", "Inductor"],
+        "question": "Which component stores electrical energy in an electric field?"
+      },
+      {
+        "answer": "Inductor",
+        "options": ["Resistor", "Battery", "Capacitor", "Inductor"],
+        "question": "Which component stores electrical energy in a magnetic field?"
+      },
+      {
+        "answer": "Series circuit",
+        "options": ["Series circuit", "Parallel circuit", "Complex circuit", "Open circuit"],
+        "question": "In which type of circuit do all components share the same current?"
+      },
+      {
+        "answer": "Parallel circuit",
+        "options": ["Series circuit", "Parallel circuit", "Complex circuit", "Open circuit"],
+        "question": "In which type of circuit do all components share the same voltage?"
+      },
+      {
+        "answer": "Open circuit",
+        "options": ["Open circuit", "Closed circuit", "Short circuit", "Parallel circuit"],
+        "question": "Which type of circuit has no current flow due to a break in the path?"
+      },
+      {
+        "answer": "Short circuit",
+        "options": ["Open circuit", "Closed circuit", "Short circuit", "Parallel circuit"],
+        "question": "Which type of circuit has very low resistance, causing excessive current flow?"
+      },
+      {
+        "answer": "Kirchhoff's Voltage Law",
+        "options": ["Ohm's Law", "Kirchhoff's Voltage Law", "Kirchhoff's Current Law", "Faraday's Law"],
+        "question": "Which law states that the sum of voltages around a closed loop is zero?"
+      },
+      {
+        "answer": "Kirchhoff's Current Law",
+        "options": ["Ohm's Law", "Kirchhoff's Voltage Law", "Kirchhoff's Current Law", "Faraday's Law"],
+        "question": "Which law states that the sum of currents entering a junction equals the sum of currents leaving it?"
+      },
+      {
+        "answer": "Power supply",
+        "options": ["Power supply", "Resistor", "Capacitor", "Inductor"],
+        "question": "Which component provides voltage to an electronic device?"
+      },
+      {
+        "answer": "Transformer",
+        "options": ["Transformer", "Resistor", "Capacitor", "Inductor"],
+        "question": "Which component is used to increase or decrease voltage in an AC circuit?"
+      },
+      {
+        "answer": "Semiconductors",
+        "options": ["Conductors", "Insulators", "Semiconductors", "Resistors"],
+        "question": "Which type of materials have resistance between conductors and insulators?"
+      },
+      {
+        "answer": "LED",
+        "options": ["Incandescent", "Fluorescent", "LED", "Transformer"],
+        "question": "Which type of lamp is the most energy-efficient?"
+      },
+      {
+        "answer": "Incandescent",
+        "options": ["Incandescent", "Fluorescent", "LED", "Transformer"],
+        "question": "Which type of lamp produces light by heating a filament?"
+      },
+      {
+        "answer": "Fluorescent",
+        "options": ["Incandescent", "Fluorescent", "LED", "Transformer"],
+        "question": "Which type of lamp produces light by exciting gas molecules?"
+      },
+      {
+        "answer": "Electric potential difference",
+        "options": ["Electric potential difference", "Electric current", "Electric resistance", "Electric power"],
+        "question": "What is another term for voltage?"
+      },
+      {
+        "answer": "Electric charge",
+        "options": ["Electric charge", "Electric current", "Electric resistance", "Electric power"],
+        "question": "What flows through a conductor to create electric current?"
+      },
+      {
+        "answer": "Electric field",
+        "options": ["Electric field", "Magnetic field", "Gravitational field", "Nuclear field"],
+        "question": "What is created around a charged object?"
+      },
+      {
+        "answer": "Magnetic field",
+        "options": ["Electric field", "Magnetic field", "Gravitational field", "Nuclear field"],
+        "question": "What is created around a current-carrying conductor?"
+      },
+      {
+        "answer": "Electrons",
+        "options": ["Protons", "Neutrons", "Electrons", "Photons"],
+        "question": "Which particles are responsible for the flow of electric current in a conductor?"
+      },
+      {
+        "answer": "Protons",
+        "options": ["Protons", "Neutrons", "Electrons", "Photons"],
+        "question": "Which particles are positively charged and reside in the nucleus of an atom?"
+      },
+      {
+        "answer": "Neutrons",
+        "options": ["Protons", "Neutrons", "Electrons", "Photons"],
+        "question": "Which particles are neutral and reside in the nucleus of an atom?"
+      },
+      {
+        "answer": "Photons",
+        "options": ["Protons", "Neutrons", "Electrons", "Photons"],
+        "question": "Which particles are responsible for carrying light energy?"
+      },
+      {
+        "answer": "Electric circuit",
+        "options": ["Electric circuit", "Magnetic circuit", "Gravitational circuit", "Nuclear circuit"],
+        "question": "What is a closed path through which electric current flows called?"
+      },
+      {
+        "answer": "Switch",
+        "options": ["Switch", "Resistor", "Capacitor", "Inductor"],
+        "question": "Which component is used to open or close an electric circuit?"
+      },
+      {
+        "answer": "Ground",
+        "options": ["Ground", "Resistor", "Capacitor", "Inductor"],
+        "question": "What is the reference point in an electric circuit with zero voltage called?"
+      },
+      {
+        "answer": "Load",
+        "options": ["Load", "Source", "Switch", "Ground"],
+        "question": "What is the component in a circuit that consumes electrical energy called?"
+      },
+      {
+        "answer": "Source",
+        "options": ["Load", "Source", "Switch", "Ground"],
+        "question": "What is the component in a circuit that provides electrical energy called?"
+      },
+      {
+        "answer": "Conventional current",
+        "options": ["Conventional current", "Electron flow", "Alternating current", "Direct current"],
+        "question": "What is the flow of positive charges from the positive to the negative terminal called?"
+      },
+      {
+        "answer": "Electron flow",
+        "options": ["Conventional current", "Electron flow", "Alternating current", "Direct current"],
+        "question": "What is the flow of electrons from the negative to the positive terminal called?"
+      },
+      {
+        "answer": "Alternating current",
+        "options": ["Conventional current", "Electron flow", "Alternating current", "Direct current"],
+        "question": "What type of current reverses direction periodically?"
+      },
+      {
+        "answer": "Direct current",
+        "options": ["Conventional current", "Electron flow", "Alternating current", "Direct current"],
+        "question": "What type of current flows in one direction only?"
+      },
+      {
+        "answer": "Frequency",
+        "options": ["Frequency", "Amplitude", "Wavelength", "Period"],
+        "question": "What is the number of cycles per second in an AC circuit called?"
+      },
+      {
+        "answer": "Amplitude",
+        "options": ["Frequency", "Amplitude", "Wavelength", "Period"],
+        "question": "What is the maximum value of voltage or current in an AC circuit called?"
+      },
+      {
+        "answer": "Wavelength",
+        "options": ["Frequency", "Amplitude", "Wavelength", "Period"],
+        "question": "What is the distance between two consecutive peaks of a wave called?"
+      },
+      {
+        "answer": "Period",
+        "options": ["Frequency", "Amplitude", "Wavelength", "Period"],
+        "question": "What is the time taken to complete one cycle in an AC circuit called?"
+      },
+      {
+        "answer": "RMS value",
+        "options": ["RMS value", "Peak value", "Average value", "Instantaneous value"],
+        "question": "What is the effective value of voltage or current in an AC circuit called?"
+      },
+      {
+        "answer": "Peak value",
+        "options": ["RMS value", "Peak value", "Average value", "Instantaneous value"],
+        "question": "What is the maximum value of voltage or current in an AC circuit called?"
+      },
+      {
+        "answer": "Average value",
+        "options": ["RMS value", "Peak value", "Average value", "Instantaneous value"],
+        "question": "What is the mean value of voltage or current over one cycle in an AC circuit called?"
+      },
+      {
+        "answer": "Instantaneous value",
+        "options": ["RMS value", "Peak value", "Average value", "Instantaneous value"],
+        "question": "What is the value of voltage or current at a specific moment in an AC circuit called?"
+      },
+      {
+        "answer": "Phase difference",
+        "options": ["Phase difference", "Frequency difference", "Amplitude difference", "Wavelength difference"],
+        "question": "What is the difference in phase between two waveforms in an AC circuit called?"
+      },
+      {
+        "answer": "Power factor",
+        "options": ["Power factor", "Frequency factor", "Amplitude factor", "Wavelength factor"],
+        "question": "What is the ratio of real power to apparent power in an AC circuit called?"
+      },
+      {
+        "answer": "Real power",
+        "options": ["Real power", "Reactive power", "Apparent power", "Complex power"],
+        "question": "What is the power consumed by resistive components in an AC circuit called?"
+      },
+      {
+        "answer": "Reactive power",
+        "options": ["Real power", "Reactive power", "Apparent power", "Complex power"],
+        "question": "What is the power consumed by inductive or capacitive components in an AC circuit called?"
+      },
+      {
+        "answer": "Apparent power",
+        "options": ["Real power", "Reactive power", "Apparent power", "Complex power"],
+        "question": "What is the product of voltage and current in an AC circuit called?"
+      },
+      {
+        "answer": "Complex power",
+        "options": ["Real power", "Reactive power", "Apparent power", "Complex power"],
+        "question": "What is the combination of real and reactive power in an AC circuit called?"
+      },
+      {
+        "answer": "Impedance",
+        "options": ["Resistance", "Reactance", "Impedance", "Conductance"],
+        "question": "What is the total opposition to current flow in an AC circuit called?"
+      },
+      {
+        "answer": "Reactance",
+        "options": ["Resistance", "Reactance", "Impedance", "Conductance"],
+        "question": "What is the opposition to current flow due to inductance or capacitance in an AC circuit called?"
+      },
+      {
+        "answer": "Conductance",
+        "options": ["Resistance", "Reactance", "Impedance", "Conductance"],
+        "question": "What is the reciprocal of resistance called?"
+      },
+      {
+        "answer": "Susceptance",
+        "options": ["Resistance", "Reactance", "Impedance", "Susceptance"],
+        "question": "What is the reciprocal of reactance called?"
+      },
+      {
+        "answer": "Admittance",
+        "options": ["Resistance", "Reactance", "Impedance", "Admittance"],
+        "question": "What is the reciprocal of impedance called?"
+      },
+      {
+        "answer": "Inductance",
+        "options": ["Resistance", "Capacitance", "Inductance", "Conductance"],
+        "question": "What is the property of a coil to oppose changes in current called?"
+      },
+      {
+        "answer": "Capacitance",
+        "options": ["Resistance", "Capacitance", "Inductance", "Conductance"],
+        "question": "What is the property of a capacitor to store electric charge called?"
+      },
+      {
+        "answer": "Farad",
+        "options": ["Ohm", "Farad", "Henry", "Siemens"],
+        "question": "What is the unit of measurement for capacitance?"
+      },
+      {
+        "answer": "Henry",
+        "options": ["Ohm", "Farad", "Henry", "Siemens"],
+        "question": "What is the unit of measurement for inductance?"
+      },
+      {
+        "answer": "Siemens",
+        "options": ["Ohm", "Farad", "Henry", "Siemens"],
+        "question": "What is the unit of measurement for conductance?"
+      },
+      {
+        "answer": "Mho",
+        "options": ["Ohm", "Farad", "Henry", "Mho"],
+        "question": "What is another term for siemens, the unit of conductance?"
+      },
+      {
+        "answer": "Time constant",
+        "options": ["Time constant", "Frequency constant", "Amplitude constant", "Wavelength constant"],
+        "question": "What is the time required for a capacitor or inductor to reach 63.2% of its final value called?"
+      },
+      {
+        "answer": "Resonance",
+        "options": ["Resonance", "Frequency", "Amplitude", "Wavelength"],
+        "question": "What is the condition in an AC circuit where inductive and capacitive reactances are equal called?"
+      },
+      {
+        "answer": "Quality factor",
+        "options": ["Quality factor", "Frequency factor", "Amplitude factor", "Wavelength factor"],
+        "question": "What is the ratio of reactance to resistance in a resonant circuit called?"
+      },
+      {
+        "answer": "Bandwidth",
+        "options": ["Bandwidth", "Frequency", "Amplitude", "Wavelength"],
+        "question": "What is the range of frequencies over which a resonant circuit operates effectively called?"
+      },
+      {
+        "answer": "Cutoff frequency",
+        "options": ["Cutoff frequency", "Resonant frequency", "Amplitude frequency", "Wavelength frequency"],
+        "question": "What is the frequency at which a filter starts to attenuate signals called?"
+      },
+      {
+        "answer": "Resonant frequency",
+        "options": ["Cutoff frequency", "Resonant frequency", "Amplitude frequency", "Wavelength frequency"],
+        "question": "What is the frequency at which a circuit resonates called?"
+      },
+      {
+        "answer": "Filter",
+        "options": ["Filter", "Resistor", "Capacitor", "Inductor"],
+        "question": "What is a circuit that allows certain frequencies to pass while blocking others called?"
+      },
+      {
+        "answer": "Low-pass filter",
+        "options": ["Low-pass filter", "High-pass filter", "Band-pass filter", "Band-stop filter"],
+        "question": "What type of filter allows low frequencies to pass while blocking high frequencies?"
+      },
+      {
+        "answer": "High-pass filter",
+        "options": ["Low-pass filter", "High-pass filter", "Band-pass filter", "Band-stop filter"],
+        "question": "What type of filter allows high frequencies to pass while blocking low frequencies?"
+      },
+      {
+        "answer": "Band-pass filter",
+        "options": ["Low-pass filter", "High-pass filter", "Band-pass filter", "Band-stop filter"],
+        "question": "What type of filter allows a specific range of frequencies to pass while blocking others?"
+      },
+      {
+        "answer": "Band-stop filter",
+        "options": ["Low-pass filter", "High-pass filter", "Band-pass filter", "Band-stop filter"],
+        "question": "What type of filter blocks a specific range of frequencies while allowing others to pass?"
+      },
+      {
+        "answer": "Attenuation",
+        "options": ["Attenuation", "Amplification", "Resonance", "Filtering"],
+        "question": "What is the reduction in signal strength as it passes through a circuit called?"
+      },
+      {
+        "answer": "Amplification",
+        "options": ["Attenuation", "Amplification", "Resonance", "Filtering"],
+        "question": "What is the increase in signal strength as it passes through a circuit called?"
+      },
+      {
+        "answer": "Gain",
+        "options": ["Gain", "Loss", "Resonance", "Filtering"],
+        "question": "What is the ratio of output signal strength to input signal strength called?"
+      },
+      {
+        "answer": "Decibel",
+        "options": ["Decibel", "Ohm", "Farad", "Henry"],
+        "question": "What is the unit of measurement for gain or loss in signal strength?"
+      },
+      {
+        "answer": "Signal-to-noise ratio",
+        "options": ["Signal-to-noise ratio", "Gain-to-loss ratio", "Resonance ratio", "Filtering ratio"],
+        "question": "What is the ratio of desired signal strength to unwanted noise called?"
+      },
+      {
+        "answer": "Noise",
+        "options": ["Noise", "Signal", "Resonance", "Filtering"],
+        "question": "What is any unwanted disturbance in an electrical signal called?"
+      },
+      {
+        "answer": "Signal",
+        "options": ["Noise", "Signal", "Resonance", "Filtering"],
+        "question": "What is the desired electrical information in a circuit called?"
+      },
+      {
+        "answer": "Modulation",
+        "options": ["Modulation", "Amplification", "Resonance", "Filtering"],
+        "question": "What is the process of varying a carrier signal to transmit information called?"
+      },
+      {
+        "answer": "Demodulation",
+        "options": ["Demodulation", "Amplification", "Resonance", "Filtering"],
+        "question": "What is the process of extracting information from a modulated signal called?"
+      },
+      {
+        "answer": "Amplitude modulation",
+        "options": ["Amplitude modulation", "Frequency modulation", "Phase modulation", "Pulse modulation"],
+        "question": "What type of modulation varies the amplitude of a carrier signal?"
+      },
+      {
+        "answer": "Frequency modulation",
+        "options": ["Amplitude modulation", "Frequency modulation", "Phase modulation", "Pulse modulation"],
+        "question": "What type of modulation varies the frequency of a carrier signal?"
+      },
+      {
+        "answer": "Phase modulation",
+        "options": ["Amplitude modulation", "Frequency modulation", "Phase modulation", "Pulse modulation"],
+        "question": "What type of modulation varies the phase of a carrier signal?"
+      },
+      {
+        "answer": "Pulse modulation",
+        "options": ["Amplitude modulation", "Frequency modulation", "Phase modulation", "Pulse modulation"],
+        "question": "What type of modulation varies the pulse width or position of a carrier signal?"
+      },
+      {
+        "answer": "Carrier signal",
+        "options": ["Carrier signal", "Modulated signal", "Demodulated signal", "Noise signal"],
+        "question": "What is the high-frequency signal used to transmit information called?"
+      },
+      {
+        "answer": "Modulated signal",
+        "options": ["Carrier signal", "Modulated signal", "Demodulated signal", "Noise signal"],
+        "question": "What is the carrier signal after it has been varied to transmit information called?"
+      },
+      {
+        "answer": "Demodulated signal",
+        "options": ["Carrier signal", "Modulated signal", "Demodulated signal", "Noise signal"],
+        "question": "What is the signal after information has been extracted from it called?"
+      },
+      {
+        "answer": "Noise signal",
+        "options": ["Carrier signal", "Modulated signal", "Demodulated signal", "Noise signal"],
+        "question": "What is any unwanted disturbance in a modulated signal called?"
+      },
+      {
+        "answer": "Transmitter",
+        "options": ["Transmitter", "Receiver", "Amplifier", "Filter"],
+        "question": "What is the device that generates and sends a modulated signal called?"
+      },
+      {
+        "answer": "Receiver",
+        "options": ["Transmitter", "Receiver", "Amplifier", "Filter"],
+        "question": "What is the device that receives and demodulates a signal called?"
+      },
+      {
+        "answer": "Amplifier",
+        "options": ["Transmitter", "Receiver", "Amplifier", "Filter"],
+        "question": "What is the device that increases the strength of a signal called?"
+      },
+      {
+        "answer": "Filter",
+        "options": ["Transmitter", "Receiver", "Amplifier", "Filter"],
+        "question": "What is the device that allows certain frequencies to pass while blocking others called?"
+      },
+      {
+        "answer": "Antenna",
+        "options": ["Antenna", "Transmitter", "Receiver", "Amplifier"],
+        "question": "What is the device that transmits or receives electromagnetic waves called?"
+      },
+      {
+        "answer": "Electromagnetic waves",
+        "options": ["Electromagnetic waves", "Sound waves", "Mechanical waves", "Gravitational waves"],
+        "question": "What type of waves are used to transmit radio and television signals?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Sound waves", "Mechanical waves", "Gravitational waves"],
+        "question": "What type of electromagnetic waves are used for communication?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "What type of electromagnetic waves are used in microwave ovens and satellite communication?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "What type of electromagnetic waves are used in remote controls and thermal imaging?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "What type of electromagnetic waves are used in sterilization and fluorescence?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "What type of electromagnetic waves are used in medical imaging?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "What type of electromagnetic waves are used in cancer treatment?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "What type of electromagnetic waves are visible to the human eye?"
+      },
+      {
+        "answer": "Wavelength",
+        "options": ["Wavelength", "Frequency", "Amplitude", "Period"],
+        "question": "What is the distance between two consecutive peaks of an electromagnetic wave called?"
+      },
+      {
+        "answer": "Frequency",
+        "options": ["Wavelength", "Frequency", "Amplitude", "Period"],
+        "question": "What is the number of cycles per second of an electromagnetic wave called?"
+      },
+      {
+        "answer": "Amplitude",
+        "options": ["Wavelength", "Frequency", "Amplitude", "Period"],
+        "question": "What is the maximum value of an electromagnetic wave called?"
+      },
+      {
+        "answer": "Period",
+        "options": ["Wavelength", "Frequency", "Amplitude", "Period"],
+        "question": "What is the time taken to complete one cycle of an electromagnetic wave called?"
+      },
+      {
+        "answer": "Speed of light",
+        "options": ["Speed of light", "Speed of sound", "Speed of electricity", "Speed of magnetism"],
+        "question": "What is the speed at which electromagnetic waves travel in a vacuum?"
+      },
+      {
+        "answer": "3 × 10^8 m/s",
+        "options": ["3 × 10^8 m/s", "3 × 10^6 m/s", "3 × 10^4 m/s", "3 × 10^2 m/s"],
+        "question": "What is the approximate speed of light in a vacuum?"
+      },
+      {
+        "answer": "Reflection",
+        "options": ["Reflection", "Refraction", "Diffraction", "Interference"],
+        "question": "What is the bouncing back of electromagnetic waves from a surface called?"
+      },
+      {
+        "answer": "Refraction",
+        "options": ["Reflection", "Refraction", "Diffraction", "Interference"],
+        "question": "What is the bending of electromagnetic waves as they pass through a medium called?"
+      },
+      {
+        "answer": "Diffraction",
+        "options": ["Reflection", "Refraction", "Diffraction", "Interference"],
+        "question": "What is the spreading out of electromagnetic waves around obstacles called?"
+      },
+      {
+        "answer": "Interference",
+        "options": ["Reflection", "Refraction", "Diffraction", "Interference"],
+        "question": "What is the interaction of electromagnetic waves resulting in reinforcement or cancellation called?"
+      },
+      {
+        "answer": "Polarization",
+        "options": ["Polarization", "Reflection", "Refraction", "Diffraction"],
+        "question": "What is the alignment of electromagnetic waves in a specific direction called?"
+      },
+      {
+        "answer": "Doppler effect",
+        "options": ["Doppler effect", "Reflection", "Refraction", "Diffraction"],
+        "question": "What is the change in frequency of electromagnetic waves due to relative motion called?"
+      },
+      {
+        "answer": "Electromagnetic spectrum",
+        "options": ["Electromagnetic spectrum", "Sound spectrum", "Mechanical spectrum", "Gravitational spectrum"],
+        "question": "What is the range of all possible frequencies of electromagnetic waves called?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum has the longest wavelength?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum has the shortest wavelength?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is visible to the human eye?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is responsible for sunburns?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in medical imaging?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in thermal imaging?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave ovens?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radio communication?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in cancer treatment?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is responsible for photosynthesis?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is responsible for vitamin D production in the skin?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in airport security scanners?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in night vision devices?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in satellite communication?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in television broadcasting?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in sterilization of medical equipment?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in fiber optic communication?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in water purification?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in crystallography?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in weather forecasting?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radar systems?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in wireless communication?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in nuclear medicine?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in photography?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in forensic analysis?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in astronomy?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in remote sensing?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in wireless networking?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in AM and FM radio broadcasting?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray astronomy?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in optical microscopy?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in detecting counterfeit currency?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in dental imaging?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in thermal cameras?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in GPS systems?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in Bluetooth technology?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in radiation therapy?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in laser technology?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in sterilization of water?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in baggage scanning at airports?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in motion detection sensors?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in Wi-Fi technology?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in satellite television?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in PET scans?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in barcode scanners?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in detecting forged documents?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in mammography?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared spectroscopy?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave spectroscopy?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radio astronomy?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray burst detection?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in optical communication?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV spectroscopy?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray diffraction?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared photography?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave communication?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in long-distance communication?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray spectroscopy?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in optical telescopes?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV photography?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray crystallography?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared telescopes?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave telescopes?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radio telescopes?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray telescopes?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in solar panels?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV sterilization?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray fluorescence?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared saunas?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave drying?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radio navigation?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray sterilization?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in optical fibers?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV curing?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray lithography?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared heating?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave heating?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radio frequency identification (RFID)?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray imaging?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in optical coherence tomography?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV-Vis spectroscopy?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray computed tomography (CT)?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared thermography?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave ablation?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radio frequency ablation?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray radiography?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in optical tweezers?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV phototherapy?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray therapy?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared therapy?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave therapy?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radio wave therapy?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray therapy?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in photodynamic therapy?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV germicidal irradiation?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray fluorescence spectroscopy?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared spectroscopy?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave spectroscopy?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radio astronomy?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray burst detection?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in optical communication?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV spectroscopy?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray diffraction?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared photography?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave communication?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in long-distance communication?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray spectroscopy?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in optical telescopes?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV photography?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray crystallography?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared telescopes?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave telescopes?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radio telescopes?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray telescopes?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in solar panels?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV sterilization?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray fluorescence?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared saunas?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave drying?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radio navigation?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray sterilization?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in optical fibers?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV curing?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray lithography?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared heating?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave heating?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radio frequency identification (RFID)?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray imaging?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in optical coherence tomography?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV-Vis spectroscopy?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray computed tomography (CT)?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared thermography?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave ablation?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radio frequency ablation?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray radiography?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in optical tweezers?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV phototherapy?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray therapy?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared therapy?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave therapy?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radio wave therapy?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray therapy?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in photodynamic therapy?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV germicidal irradiation?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray fluorescence spectroscopy?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared spectroscopy?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave spectroscopy?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in radio astronomy?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray burst detection?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in optical communication?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV spectroscopy?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray diffraction?"
+      },
+      {
+        "answer": "Infrared waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in infrared photography?"
+      },
+      {
+        "answer": "Microwaves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in microwave communication?"
+      },
+      {
+        "answer": "Radio waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in long-distance communication?"
+      },
+      {
+        "answer": "Gamma rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Gamma rays"],
+        "question": "Which part of the electromagnetic spectrum is used in gamma-ray spectroscopy?"
+      },
+      {
+        "answer": "Visible light",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Visible light"],
+        "question": "Which part of the electromagnetic spectrum is used in optical telescopes?"
+      },
+      {
+        "answer": "Ultraviolet waves",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "Ultraviolet waves"],
+        "question": "Which part of the electromagnetic spectrum is used in UV photography?"
+      },
+      {
+        "answer": "X-rays",
+        "options": ["Radio waves", "Microwaves", "Infrared waves", "X-rays"],
+        "question": "Which part of the electromagnetic spectrum is used in X-ray crystallography?"
+      }
+    ]
+}
