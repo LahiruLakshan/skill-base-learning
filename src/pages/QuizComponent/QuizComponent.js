@@ -19,7 +19,7 @@ const QuizComponent = () => {
   useEffect(() => {
     const allQuestions = QUIZDATA.questions;
     const shuffledQuestions = allQuestions.sort(() => 0.5 - Math.random()); // Shuffle questions
-    const selectedQuestions = shuffledQuestions.slice(0, 5); // Select first 30
+    const selectedQuestions = shuffledQuestions.slice(0, 30); // Select first 30
     setQuestions(selectedQuestions);
   }, []);
 

@@ -55,7 +55,7 @@ Return only the output as a **raw JSON array** (no explanation, no extra wrappin
           "https://api.openai.com/v1/chat/completions",
           {
             model: "gpt-4",
-            messages: [{ role: "user", content: generateQuizPrompt(subModule.module_title, subModule.level, 2, stripHtmlTags(subModule.sub_module_content)) }],
+            messages: [{ role: "user", content: generateQuizPrompt(subModule.module_title, subModule.level, 10, stripHtmlTags(subModule.sub_module_content)) }],
           },
           {
             headers: {
