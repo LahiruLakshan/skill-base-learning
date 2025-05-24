@@ -17,9 +17,9 @@ const Home = () => {
           <p className="text-gray-600 text-lg mb-8">
             Take a personalized skill test and start your journey with interactive modules tailored just for you.
           </p>
-          <Link to="/quiz">
+          <Link to="/pre-quiz">
             <button className="bg-primary text-white px-6 py-3 rounded-lg text-lg font-semibold shadow hover:bg-blue-700 transition">
-              Let&apos;s Start Pre Quiz
+              Let's Start Pre Quiz
             </button>
           </Link>
         </div>

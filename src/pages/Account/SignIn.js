@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { logoLight } from "../../assets/images";
 import { BACKEND_URL } from "../../constants/config";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "../../firebase"; // adjust path if needed
+import { doc, setDoc } from 'firebase/firestore';
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -25,37 +28,36 @@ const SignIn = () => {
     setErrorMsg("");
   };
   const handleSignIn = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!email) {
-      setErrEmail("Enter your email");
-      return;
-    }
+  if (!email) {
+    setErrEmail("Enter your email");
+    return;
+  }
 
-    if (!password) {
-      setErrPassword("Enter your password");
-      return;
-    }
+  if (!password) {
+    setErrPassword("Enter your password");
+    return;
+  }
 
-    try {
-      const response = await axios.post(`${BACKEND_URL}/api/auth/login/`, {
-        email,
-        password,
-      });
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
 
-      if (response.data) {
-        setSuccessMsg("Login successful! Redirecting...");
-        console.log("response.data", response.data);
-        
-        localStorage.setItem("authToken", JSON.stringify(response.data)); // Store token if needed
-        setTimeout(() => {
-          window.location.href = "/"; // Redirect to dashboard or home page
-        }, 2000);
-      }
-    } catch (error) {
-      setErrorMsg("Invalid email or password. Please try again.");
-    }
-  };
+    console.log("user : ", user.uid);
+    
+    setSuccessMsg("Login successful! Redirecting...");
+    localStorage.setItem("authToken", user.accessToken);
+    localStorage.setItem("uid", user.uid);
+    setTimeout(() => {
+      window.location.href = "/";
+    }, 2000);
+  } catch (error) {
+    console.error(error);
+    setErrorMsg("Invalid email or password. Please try again.");
+  }
+};
+
 
   return (
     <div className="w-full h-screen flex items-center justify-center">

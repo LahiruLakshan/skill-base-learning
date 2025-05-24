@@ -21,11 +21,13 @@ import Journal from "./pages/Journal/Journal";
 import Offer from "./pages/Offer/Offer";
 import Payment from "./pages/payment/Payment";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
-import LearningPathApp from "./pages/PreQuizComponent/PreQuizComponent";
 import QuizComponent from "./pages/QuizComponent/QuizComponent";
 import ModulesPage from "./pages/ModulesPage/ModulesPage";
 import { SubModulesPage } from "./pages/SubModulesPage/SubModulesPage";
 import ModuleContentPage from "./pages/ModuleContentPage/ModuleContentPage";
+import ModuleQuiz from "./pages/ModuleQuiz/ModuleQuiz";
+import UserDashboard from "./pages/UserDashboard/UserDashboard";
+import Profile from "./pages/Profile/Profile";
 
 const Layout = () => {
   return (
@@ -57,7 +59,10 @@ const router = createBrowserRouter(
         <Route path="/modules" element={<ModulesPage />}></Route>
         <Route path="/modules/:id" element={<SubModulesPage />}></Route>
         <Route path="/sub-module/:id" element={<ModuleContentPage />}></Route>
-        <Route path="/quiz" element={<QuizComponent />}></Route>
+        <Route path="/pre-quiz" element={<QuizComponent />}></Route>
+        <Route path="/quiz/:id" element={<ModuleQuiz />}></Route>
+        <Route path="/dashboard" element={<UserDashboard />}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
       </Route>
       <Route path="/signup" element={<SignUp />}></Route>
       <Route path="/signin" element={<SignIn />}></Route>

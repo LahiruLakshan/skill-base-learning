@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { logoLight } from "../../assets/images";
-import { BACKEND_URL } from "../../constants/config";
+import { auth, db } from "../../firebase"; // adjust path if needed
+import { doc, setDoc } from "firebase/firestore";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -21,21 +21,28 @@ const SignUp = () => {
     }
 
     try {
-      const response = await axios.post(`${BACKEND_URL}/api/auth/signup/`, {
-        username,
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
         email,
-        password,
-        role,
-      });
+        password
+      );
 
-      if (response.data) {
-        setSuccessMsg("Account created successfully! Redirecting to Sign In...");
-        setTimeout(() => {
-          window.location.href = "/signin";
-        }, 2000);
-      }
+      const userDocRef = doc(db, "users", userCredential.user.uid);
+      await setDoc(userDocRef, {
+        id: userCredential.user.uid,
+        email: email,
+        name: username,
+        type: "User", // Hardcoded as Admin for this signup
+        level: "None",
+        createdAt: new Date(),
+      });
+      setSuccessMsg("Account created successfully! Redirecting to Sign In...");
+      setTimeout(() => {
+        window.location.href = "/signin";
+      }, 2000);
+      console.log("User registered:", userCredential.user);
     } catch (error) {
-      setErrorMsg("Failed to sign up. Please try again.");
+      console.error("Error signing up:", error.message);
     }
   };
 
@@ -50,7 +57,9 @@ const SignUp = () => {
       <div className="w-full lgl:w-1/2 h-full">
         {successMsg ? (
           <div className="w-full lgl:w-[500px] h-full flex flex-col justify-center">
-            <p className="w-full px-4 py-10 text-green-500 font-medium font-titleFont">{successMsg}</p>
+            <p className="w-full px-4 py-10 text-green-500 font-medium font-titleFont">
+              {successMsg}
+            </p>
           </div>
         ) : (
           <form className="w-full lgl:w-[450px] h-screen flex items-center justify-center">
@@ -59,11 +68,15 @@ const SignUp = () => {
                 Sign Up
               </h1>
               {errorMsg && (
-                <p className="text-sm text-red-500 font-titleFont font-semibold">{errorMsg}</p>
+                <p className="text-sm text-red-500 font-titleFont font-semibold">
+                  {errorMsg}
+                </p>
               )}
               <div className="flex flex-col gap-3">
                 <div className="flex flex-col">
-                  <p className="font-titleFont text-base font-semibold text-gray-600">Username</p>
+                  <p className="font-titleFont text-base font-semibold text-gray-600">
+                    Username
+                  </p>
                   <input
                     onChange={(e) => setUsername(e.target.value)}
                     value={username}
@@ -73,7 +86,9 @@ const SignUp = () => {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <p className="font-titleFont text-base font-semibold text-gray-600">Email</p>
+                  <p className="font-titleFont text-base font-semibold text-gray-600">
+                    Email
+                  </p>
                   <input
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
@@ -83,7 +98,9 @@ const SignUp = () => {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <p className="font-titleFont text-base font-semibold text-gray-600">Password</p>
+                  <p className="font-titleFont text-base font-semibold text-gray-600">
+                    Password
+                  </p>
                   <input
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
@@ -92,7 +109,7 @@ const SignUp = () => {
                     placeholder="Enter password"
                   />
                 </div>
-                <div className="flex flex-col">
+                {/* <div className="flex flex-col">
                   <p className="font-titleFont text-base font-semibold text-gray-600">Role</p>
                   <select
                     onChange={(e) => setRole(e.target.value)}
@@ -102,7 +119,7 @@ const SignUp = () => {
                     <option value="user">User</option>
                     <option value="admin">Admin</option>
                   </select>
-                </div>
+                </div> */}
                 <button
                   onClick={handleSignUp}
                   className="bg-primeColor hover:bg-black text-gray-200 w-full text-base font-medium h-10 rounded-md duration-300"
@@ -110,8 +127,11 @@ const SignUp = () => {
                   Sign Up
                 </button>
                 <p className="text-sm text-center">
-                  Already have an Account? {" "}
-                  <Link to="/signin" className="hover:text-blue-600 duration-300">
+                  Already have an Account?{" "}
+                  <Link
+                    to="/signin"
+                    className="hover:text-blue-600 duration-300"
+                  >
                     Sign In
                   </Link>
                 </p>

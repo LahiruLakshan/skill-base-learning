@@ -8,14 +8,18 @@ import Image from "../../designLayouts/Image";
 import { navBarList } from "../../../constants";
 import Flex from "../../designLayouts/Flex";
 import { Button } from "../../ui";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../../firebase";
 
 const Header = () => {
-  const authToken = JSON.parse(localStorage.getItem("authToken")); // Assuming authToken is stored in localStorage
-const userRole = authToken?.role || "user"; // Default role is 'user'
+  const [userData, setUserData] = useState({});
+  const authToken = localStorage?.getItem("authToken"); // Assuming authToken is stored in localStorage
+  const uid = localStorage?.getItem("uid"); // Assuming authToken is stored in localStorage
+  const userRole = authToken?.role || "user"; // Default role is 'user'
 
-const filteredNavBarList = navBarList.filter(
-  (item) => !item.adminOnly || userRole === "admin"
-);
+  const filteredNavBarList = navBarList.filter(
+    (item) => !item.adminOnly || userRole === "admin"
+  );
   const [showMenu, setShowMenu] = useState(true);
   const [sidenav, setSidenav] = useState(false);
   const [category, setCategory] = useState(false);
@@ -31,9 +35,30 @@ const filteredNavBarList = navBarList.filter(
     };
     ResponsiveMenu();
     window.addEventListener("resize", ResponsiveMenu);
-    
-
   }, []);
+
+  useEffect(() => {
+    if (uid) {
+      const fetchUser = async () => {
+        try {
+          const q = query(collection(db, "users"), where("id", "==", uid));
+
+          const querySnapshot = await getDocs(q);
+          const userFetchData = querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
+          console.log("setUserData : ", userFetchData);
+
+          setUserData(userFetchData[0]);
+        } catch (error) {
+          console.error("Error fetching userFetchData:", error);
+        } finally {
+        }
+      };
+      fetchUser();
+    }
+  }, [uid]);
 
   return (
     <div className="w-full h-20 bg-white sticky top-0 z-50 border-b-[1px] border-b-gray-200">
@@ -53,21 +78,34 @@ const filteredNavBarList = navBarList.filter(
                 className="flex items-center w-auto z-50 p-0 gap-2"
               >
                 <>
-                  {filteredNavBarList.map(({ _id, title, link }) => (
+                  <NavLink
+                    className="flex font-normal hover:font-bold w-auto h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
+                    to={"/"}
+                    state={{ data: location.pathname.split("/")[1] }}
+                  >
+                    <li>Home</li>
+                  </NavLink>
+                  { localStorage?.getItem("authToken") && userData?.level !== "None" && (
                     <NavLink
-                      key={_id}
                       className="flex font-normal hover:font-bold w-auto h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
-                      to={link}
+                      to={"/modules"}
                       state={{ data: location.pathname.split("/")[1] }}
                     >
-                      <li>{title}</li>
+                      <li>Modules</li>
                     </NavLink>
-                  ))}
+                  )}
+                  {localStorage?.getItem("authToken") && userData?.level !== "None" && (
+                    <NavLink
+                      className="flex font-normal hover:font-bold w-auto h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
+                      to={"/dashboard"}
+                      state={{ data: location.pathname.split("/")[1] }}
+                    >
+                      <li>Dashboard</li>
+                    </NavLink>
+                  )}
                 </>
-                {sessionStorage?.getItem("level") === "ADVANCED" && <Button>ADVANCED</Button>}
               </motion.ul>
             )}
-          
 
             <HiMenuAlt2
               onClick={() => setSidenav(!sidenav)}
@@ -103,52 +141,6 @@ const filteredNavBarList = navBarList.filter(
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-4">
-                      <h1
-                        onClick={() => setCategory(!category)}
-                        className="flex justify-between text-base cursor-pointer items-center font-titleFont mb-2"
-                      >
-                        Shop by Category{" "}
-                        <span className="text-lg">{category ? "-" : "+"}</span>
-                      </h1>
-                      {category && (
-                        <motion.ul
-                          initial={{ y: 15, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          transition={{ duration: 0.4 }}
-                          className="text-sm flex flex-col gap-1"
-                        >
-                          <li className="headerSedenavLi">New Arrivals</li>
-                          <li className="headerSedenavLi">Gudgets</li>
-                          <li className="headerSedenavLi">Accessories</li>
-                          <li className="headerSedenavLi">Electronics</li>
-                          <li className="headerSedenavLi">Others</li>
-                        </motion.ul>
-                      )}
-                    </div>
-                    <div className="mt-4">
-                      <h1
-                        onClick={() => setBrand(!brand)}
-                        className="flex justify-between text-base cursor-pointer items-center font-titleFont mb-2"
-                      >
-                        Shop by Brand
-                        <span className="text-lg">{brand ? "-" : "+"}</span>
-                      </h1>
-                      {brand && (
-                        <motion.ul
-                          initial={{ y: 15, opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          transition={{ duration: 0.4 }}
-                          className="text-sm flex flex-col gap-1"
-                        >
-                          <li className="headerSedenavLi">New Arrivals</li>
-                          <li className="headerSedenavLi">Gudgets</li>
-                          <li className="headerSedenavLi">Accessories</li>
-                          <li className="headerSedenavLi">Electronics</li>
-                          <li className="headerSedenavLi">Others</li>
-                        </motion.ul>
-                      )}
-                    </div>
                   </div>
                   <span
                     onClick={() => setSidenav(false)}
@@ -160,6 +152,12 @@ const filteredNavBarList = navBarList.filter(
               </div>
             )}
           </div>
+          {userData?.level && <div className="flex flex-col  ">
+            <div className=" text-grey text-sm text-center">Current Level</div>
+            <div className="bg-blue-800 text-white py-3 px-5 border rounded-lg text-center">
+              {userData?.level === "None"? "-":userData?.level}
+            </div>
+          </div>}
         </Flex>
       </nav>
     </div>
