@@ -36,30 +36,27 @@ const QuizComponent = () => {
   };
 
   const handleNext = async () => {
-    const nextIndex = currentQuestionIndex + 1;
+  const nextIndex = currentQuestionIndex + 1;
 
-    console.log("currentQuestionIndex : ", currentQuestionIndex);
-    console.log("questions.length : ", questions.length);
+  console.log("currentQuestionIndex : ", currentQuestionIndex);
+  console.log("questions.length : ", questions.length);
 
-    if (nextIndex < questions.length) {
-      setCurrentQuestionIndex(nextIndex);
-      setSelectedAnswer("");
-      setSubmitted(false);
-      setShowLearn(false);
-      setAiResponse("");
-    } else {
-      setCurrentQuestionIndex(nextIndex);
-      const newLevel =
-        score <= 99 ? "Beginner" : score <= 299 ? "Intermediate" : "Advanced";
+  if (nextIndex < questions.length) {
+    setCurrentQuestionIndex(nextIndex);
+    setSelectedAnswer("");
+    setSubmitted(false);
+    setShowLearn(false);
+    setAiResponse("");
+  } else {
+    setCurrentQuestionIndex(nextIndex);
+    
+    const newLevel = getUserLevel(score);
+    setLevel(newLevel);
 
-      setLevel(newLevel);
-
-      const userRef = doc(db, "users", localStorage?.getItem("uid"));
-      await updateDoc(userRef, { level: newLevel });
-    }
-  };
-
-
+    const userRef = doc(db, "users", localStorage?.getItem("uid"));
+    await updateDoc(userRef, { level: newLevel });
+  }
+};
 
   if (questions.length === 0) {
     return (
@@ -68,6 +65,11 @@ const QuizComponent = () => {
   }
 
   const current = questions[currentQuestionIndex];
+const getUserLevel = (score) => {
+  if (score <= 99) return "Beginner";
+  if (score <= 299) return "Intermediate";
+  return "Advanced";
+};
 
   if (currentQuestionIndex >= questions.length) {
     return (

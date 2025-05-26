@@ -170,6 +170,8 @@ Return only the output as a **raw JSON array** (no explanation, no extra wrappin
     });
 
     const data = await response.json();
+    const quizData = JSON.parse(data.choices[0].message.content);
+    setQuestions(quizData);
     return data.choices[0].message.content;
   } catch (error) {
     console.error('Error fetching from OpenAI:', error);
