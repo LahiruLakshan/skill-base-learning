@@ -60,43 +60,44 @@ Return only the output as a **raw JSON array** (no explanation, no extra wrappin
   // Randomly select 30 unique questions from the quiz data
   useEffect(() => {
     if (subModule) {
-      async function fetchingData() {
-  try {
-    const response = await axios.post(
-      "https://openrouter.ai/api/v1/chat/completions",
-      {
-        model: "deepseek/deepseek-chat:free", // Or any other model from OpenRouter
-        messages: [
-          {
-            role: "user",
-            content: generateQuizPrompt(
-              subModule.module_title,
-              subModule.level,
-              10,
-              stripHtmlTags(subModule.sub_module_content)
-            ),
-          },
-        ],
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${DEEPSEEK}`, // Replace with your real key
-          "Content-Type": "application/json",
-          "HTTP-Referer": "<YOUR_SITE_URL>", // Optional
-          "X-Title": "<YOUR_SITE_NAME>", // Optional
-        },
-      }
-    );
+//       async function fetchingData() {
+//   try {
+//     const response = await axios.post(
+//       "https://openrouter.ai/api/v1/chat/completions",
+//       {
+//         model: "deepseek/deepseek-chat:free", // Or any other model from OpenRouter
+//         messages: [
+//           {
+//             role: "user",
+//             content: generateQuizPrompt(
+//               subModule.module_title,
+//               subModule.level,
+//               10,
+//               stripHtmlTags(subModule.sub_module_content)
+//             ),
+//           },
+//         ],
+//       },
+//       {
+//         headers: {
+//           Authorization: `Bearer ${DEEPSEEK}`, // Replace with your real key
+//           "Content-Type": "application/json",
+//           "HTTP-Referer": "<YOUR_SITE_URL>", // Optional
+//           "X-Title": "<YOUR_SITE_NAME>", // Optional
+//         },
+//       }
+//     );
 
-    const parsedContent = JSON.parse(
-      response.data.choices[0].message.content
-    );
-    console.log("response:", parsedContent);
-    setQuestions(parsedContent);
-  } catch (error) {
-    console.error("Error fetching data:", error.response?.data || error.message);
-  }
-}
+//     const parsedContent = JSON.parse(
+//       response.data.choices[0].message.content
+//     );
+//     console.log("response:", parsedContent);
+//     setQuestions(parsedContent);
+//   } catch (error) {
+//     console.error("Error fetching data:", error.response?.data || error.message);
+//   }
+// }
+
 //     const fetchingData = async () => {
 //   try {
 //     const data = JSON.stringify({
@@ -140,7 +141,42 @@ Return only the output as a **raw JSON array** (no explanation, no extra wrappin
 //     setQuestions(selectedQuestions);
 //   }
 // };  
-    fetchingData();
+    const fetchingData = async () => {
+  try {
+    const prompt = generateQuizPrompt(
+      subModule.module_title,
+      subModule.level,
+      10,
+      stripHtmlTags(subModule.sub_module_content)
+    );
+
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer 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` // Replace with your actual API key
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo", // or "gpt-4" if you have access
+        messages: [
+          {
+            role: "user",
+            content: prompt
+          }
+        ],
+        temperature: 0.7,
+        max_tokens: 1000
+      })
+    });
+
+    const data = await response.json();
+    return data.choices[0].message.content;
+  } catch (error) {
+    console.error('Error fetching from OpenAI:', error);
+    throw error;
+  }
+};
+fetchingData();
     }
 
     // const uid = localStorage.getItem("uid");
@@ -278,72 +314,72 @@ Return only the output as a **raw JSON array** (no explanation, no extra wrappin
     }
   };
 
- const fetchExplanationFromGPT = async () => {
-  const current = questions[currentQuestionIndex];
-  const prompt = `I selected the wrong answer "${selectedAnswer}" for the question: "${current.question}". Please explain why this answer is wrong and provide more context to help me learn.`;
+//  const fetchExplanationFromGPT = async () => {
+//   const current = questions[currentQuestionIndex];
+//   const prompt = `I selected the wrong answer "${selectedAnswer}" for the question: "${current.question}". Please explain why this answer is wrong and provide more context to help me learn.`;
 
-  setLoadingAI(true);
-  try {
-    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${DEEPSEEK}`, // Replace with your actual key
-        "HTTP-Referer": "<YOUR_SITE_URL>",              // Optional
-        "X-Title": "<YOUR_SITE_NAME>",                  // Optional
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: "deepseek/deepseek-chat:free",
-        messages: [
-          {
-            role: "user",
-            content: prompt,
-          }
-        ]
-      })
-    });
+//   setLoadingAI(true);
+//   try {
+//     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+//       method: "POST",
+//       headers: {
+//         "Authorization": `Bearer ${DEEPSEEK}`, // Replace with your actual key
+//         "HTTP-Referer": "<YOUR_SITE_URL>",              // Optional
+//         "X-Title": "<YOUR_SITE_NAME>",                  // Optional
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify({
+//         model: "deepseek/deepseek-chat:free",
+//         messages: [
+//           {
+//             role: "user",
+//             content: prompt,
+//           }
+//         ]
+//       })
+//     });
 
-    const data = await response.json();
+//     const data = await response.json();
 
-    const aiReply = data.choices?.[0]?.message?.content || "Sorry, no explanation returned.";
-    setAiResponse(aiReply);
-  } catch (error) {
-    console.error("Error fetching explanation:", error);
-    setAiResponse("Error fetching explanation. Please try again later.");
-  }
-  setLoadingAI(false);
-};
+//     const aiReply = data.choices?.[0]?.message?.content || "Sorry, no explanation returned.";
+//     setAiResponse(aiReply);
+//   } catch (error) {
+//     console.error("Error fetching explanation:", error);
+//     setAiResponse("Error fetching explanation. Please try again later.");
+//   }
+//   setLoadingAI(false);
+// };
 
 
-//   const fetchExplanationFromGPT = async () => {
-//     const current = questions[currentQuestionIndex];
-//     const prompt = `I selected the wrong answer "${selectedAnswer}" for the question: "${current.question}". Please explain why this answer is wrong and provide more context to help me learn.`;
+  const fetchExplanationFromGPT = async () => {
+    const current = questions[currentQuestionIndex];
+    const prompt = `I selected the wrong answer "${selectedAnswer}" for the question: "${current.question}". Please explain why this answer is wrong and provide more context to help me learn.`;
 
-//     setLoadingAI(true);
-//     try {
-//       const response = await fetch(
-//         "https://api.openai.com/v1/chat/completions",
-//         {
-//           method: "POST",
-//           headers: {
-//             "Content-Type": "application/json",
-//             Authorization: `Bearer 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`, // Replace with your key or use env
-//           },
-//           body: JSON.stringify({
-//             model: "gpt-3.5-turbo",
-//             messages: [{ role: "user", content: prompt }],
-//           }),
-//         }
-//       );
+    setLoadingAI(true);
+    try {
+      const response = await fetch(
+        "https://api.openai.com/v1/chat/completions",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer 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`, // Replace with your key or use env
+          },
+          body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: prompt }],
+          }),
+        }
+      );
 
-//       const data = await response.json();
-//       const message = data?.choices?.[0]?.message?.content;
-//       setAiResponse(message || "Sorry, could not fetch explanation.");
-//     } catch (error) {
-//       setAiResponse("Error fetching explanation.");
-//     }
-//     setLoadingAI(false);
-//   };
+      const data = await response.json();
+      const message = data?.choices?.[0]?.message?.content;
+      setAiResponse(message || "Sorry, could not fetch explanation.");
+    } catch (error) {
+      setAiResponse("Error fetching explanation.");
+    }
+    setLoadingAI(false);
+  };
 
   const current = questions[currentQuestionIndex];
 

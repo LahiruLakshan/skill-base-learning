@@ -59,35 +59,7 @@ const QuizComponent = () => {
     }
   };
 
-  const fetchExplanationFromGPT = async () => {
-    const current = questions[currentQuestionIndex];
-    const prompt = `I selected the wrong answer "${selectedAnswer}" for the question: "${current.question}". Please explain why this answer is wrong and provide more context to help me learn.`;
 
-    setLoadingAI(true);
-    try {
-      const response = await fetch(
-        "https://api.openai.com/v1/chat/completions",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer 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`, // Replace with your key or use env
-          },
-          body: JSON.stringify({
-            model: "gpt-3.5-turbo",
-            messages: [{ role: "user", content: prompt }],
-          }),
-        }
-      );
-
-      const data = await response.json();
-      const message = data?.choices?.[0]?.message?.content;
-      setAiResponse(message || "Sorry, could not fetch explanation.");
-    } catch (error) {
-      setAiResponse("Error fetching explanation.");
-    }
-    setLoadingAI(false);
-  };
 
   if (questions.length === 0) {
     return (

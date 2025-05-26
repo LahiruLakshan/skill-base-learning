@@ -42,6 +42,7 @@ const PracticeQuiz = () => {
     setCurrentQuestionIndex(nextIndex);
     setSelectedAnswer("");
     setSubmitted(false);
+    setAiResponse("");
   };
   if (questions.length === 0) {
     return (
@@ -51,41 +52,35 @@ const PracticeQuiz = () => {
 
   const current = questions[currentQuestionIndex];
 
-  const fetchExplanationFromGPT = async () => {
-  const current = questions[currentQuestionIndex];
-  const prompt = `I selected the wrong answer "${selectedAnswer}" for the question: "${current.question}". Please explain why this answer is wrong and provide more context to help me learn.`;
+ const fetchExplanationFromGPT = async () => {
+    const current = questions[currentQuestionIndex];
+    const prompt = `I selected the wrong answer "${selectedAnswer}" for the question: "${current.question}". Please explain why this answer is wrong and provide more context to help me learn.`;
 
-  setLoadingAI(true);
-  try {
-    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${DEEPSEEK}`, // Replace with your actual key
-        "HTTP-Referer": "<YOUR_SITE_URL>",              // Optional
-        "X-Title": "<YOUR_SITE_NAME>",                  // Optional
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: "deepseek/deepseek-chat:free",
-        messages: [
-          {
-            role: "user",
-            content: prompt,
-          }
-        ]
-      })
-    });
+    setLoadingAI(true);
+    try {
+      const response = await fetch(
+        "https://api.openai.com/v1/chat/completions",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer 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`, // Replace with your key or use env
+          },
+          body: JSON.stringify({
+            model: "gpt-3.5-turbo",
+            messages: [{ role: "user", content: prompt }],
+          }),
+        }
+      );
 
-    const data = await response.json();
-
-    const aiReply = data.choices?.[0]?.message?.content || "Sorry, no explanation returned.";
-    setAiResponse(aiReply);
-  } catch (error) {
-    console.error("Error fetching explanation:", error);
-    setAiResponse("Error fetching explanation. Please try again later.");
-  }
-  setLoadingAI(false);
-};
+      const data = await response.json();
+      const message = data?.choices?.[0]?.message?.content;
+      setAiResponse(message || "Sorry, could not fetch explanation.");
+    } catch (error) {
+      setAiResponse("Error fetching explanation.");
+    }
+    setLoadingAI(false);
+  };
 
   return (
     <div className="p-6 max-w-2xl mx-auto min-h-[80vh]">
