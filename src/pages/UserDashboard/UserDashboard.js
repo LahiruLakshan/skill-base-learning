@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { db } from "../../firebase"; // Firebase initialized
+import { db } from "../../firebase";
 import {
   collection,
   query,
@@ -20,6 +20,9 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
+  LineChart,
+  Line,
+  Legend,
 } from "recharts";
 
 const COLORS = [
@@ -30,6 +33,11 @@ const COLORS = [
   "#a78bfa",
   "#fb923c",
 ];
+const LEVEL_COLORS = {
+  Beginner: "#facc15",
+  Intermediate: "#a78bfa",
+  Advanced: "#f472b6",
+};
 
 export default function UserDashboard() {
   const [quizData, setQuizData] = useState([]);
@@ -65,7 +73,6 @@ export default function UserDashboard() {
         setCompletedSubModules(userData.sub_modules || []);
       }
 
-      // Fetch all submodules
       const subModulesSnap = await getDocs(collection(db, "sub_modules"));
       const allSubs = subModulesSnap.docs.map((doc) => ({
         id: doc.id,
@@ -82,7 +89,6 @@ export default function UserDashboard() {
       );
       setAllSubModules(filteredSubs);
 
-      // Check if all submodules for current level are completed
       const levelSubs = filteredSubs.filter(
         (mod) => mod.level === userData.level
       );
@@ -98,17 +104,51 @@ export default function UserDashboard() {
     fetchData();
   }, [uid]);
 
+  const quizScores = quizData.map((item) => ({
+    name:
+      item.title.length > 20
+        ? item.title
+            .split(" ")
+            .map((w) => w[0])
+            .join("")
+            .toUpperCase()
+        : item.title,
+    score: item.score,
+  }));
+
+  const pieChartData = [
+    { name: "Completed", value: completedSubModules.length },
+    {
+      name: "Remaining",
+      value: allSubModules.length - completedSubModules.length,
+    },
+  ];
+
+  const levelCompletionCount = completedSubModules.reduce((acc, sub) => {
+    const level = sub?.data?.level || "Unknown";
+    acc[level] = (acc[level] || 0) + 1;
+    return acc;
+  }, {});
+
+  const levelPieData = Object.entries(levelCompletionCount).map(
+    ([level, count]) => ({
+      name: level,
+      value: count,
+      fill: LEVEL_COLORS[level] || "#ccc",
+    })
+  );
 
   return (
-    <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">📊 User Quiz Analysis</h1>
+    <div className="p-6 space-y-6">
+      <h1 className="text-3xl font-bold text-center">📊 User Quiz Dashboard</h1>
+
       {canLevelUp && localStorage.getItem("level") !== "Advanced" && (
-        <div className="text-center mt-6">
+        <div className="text-center mt-4">
           <button
             onClick={async () => {
               const levelOrder = ["Beginner", "Intermediate", "Advanced"];
               const nextLevelIndex = levelOrder.indexOf(userLevel) + 1;
-              const nextLevel = levelOrder[nextLevelIndex] || "Advanced"; // Stay at Advanced if max
+              const nextLevel = levelOrder[nextLevelIndex] || "Advanced";
 
               await updateDoc(doc(db, "users", uid), {
                 level: nextLevel,
@@ -118,14 +158,15 @@ export default function UserDashboard() {
               alert(`🎉 You've been upgraded to ${nextLevel} level!`);
               window.location.reload();
             }}
-            className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition"
+            className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 shadow"
           >
             🚀 Level Up to Next Stage
           </button>
         </div>
       )}
-      <div className="bg-white rounded-2xl shadow p-4 mt-6">
-        <h2 className="text-xl font-semibold mb-2">📘 Submodule Progress</h2>
+
+      <div className="bg-white shadow rounded-xl p-6">
+        <h2 className="text-xl font-semibold mb-4">📘 Submodule Progress</h2>
         <table className="w-full table-auto border">
           <thead>
             <tr className="bg-gray-100">
@@ -155,12 +196,69 @@ export default function UserDashboard() {
           </tbody>
         </table>
       </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="bg-white rounded-2xl shadow p-4">
+          <h2 className="text-xl font-semibold mb-2">
+            🧠 Completed Submodules by Level
+          </h2>
+          <ResponsiveContainer width="100%" height={250}>
+            <PieChart>
+              <Pie
+                data={levelPieData}
+                dataKey="value"
+                nameKey="name"
+                outerRadius={90}
+                label
+              >
+                {levelPieData.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.fill} />
+                ))}
+              </Pie>
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
 
+        <div className="bg-white shadow rounded-xl p-6">
+          <h2 className="text-xl font-semibold mb-4">📊 Completion Overview</h2>
+          <ResponsiveContainer width="100%" height={250}>
+            <PieChart>
+              <Pie
+                data={pieChartData}
+                dataKey="value"
+                nameKey="name"
+                cx="50%"
+                cy="50%"
+                outerRadius={80}
+                label
+              >
+                {pieChartData.map((entry, index) => (
+                  <Cell
+                    key={`cell-${index}`}
+                    fill={COLORS[index % COLORS.length]}
+                  />
+                ))}
+              </Pie>
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
 
+      <div className="bg-white shadow rounded-xl p-6">
+        <h2 className="text-xl font-semibold mb-4">📈 Module Scores</h2>
+        <ResponsiveContainer width="100%" height={300}>
+          <BarChart data={quizScores}>
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Bar dataKey="score" fill="#60a5fa" />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
 
-      {/* Resources Table */}
-      <div className="bg-white rounded-2xl shadow p-4">
-        <h2 className="text-xl font-semibold mb-2">Module Resources</h2>
+      <div className="bg-white shadow rounded-xl p-6">
+        <h2 className="text-xl font-semibold mb-4">🎥 Module Resources</h2>
         <table className="w-full table-auto border">
           <thead>
             <tr className="bg-gray-100">

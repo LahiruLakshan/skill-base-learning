@@ -20,7 +20,7 @@ const QuizComponent = () => {
 
   useEffect(() => {
     const shuffled = QUIZDATA.questions.sort(() => 0.5 - Math.random());
-    setQuestions(shuffled.slice(0, 5));
+    setQuestions(shuffled.slice(0, 30));
   }, []);
 
   const handleSubmit = () => {
