@@ -38,7 +38,13 @@ const ModulesPage = () => {
         }));
         console.log("modulesData : ", modulesData);
         
-        setModules(modulesData);
+        setModules(modulesData.filter((mod) => localStorage.getItem("level") === "Beginner"
+          ? mod.level === "Beginner"
+          : localStorage.getItem("level") === "Intermediate"
+          ? mod.level === "Beginner" || mod.level === "Intermediate"
+          : mod.level === "Beginner" ||
+            mod.level === "Intermediate" ||
+            mod.level === "Advanced" ));
       } catch (error) {
         console.error('Error fetching modules:', error);
       } finally {

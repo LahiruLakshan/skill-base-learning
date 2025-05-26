@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Banner from "../../components/Banner/Banner";
 import { Button } from "../../components/ui";
 import { Link } from "react-router-dom";
-
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../firebase";
 const Home = () => {
+    const [userData, setUserData] = useState({});
+  
+  const uid = localStorage?.getItem("uid"); // Assuming authToken is stored in localStorage
+
+  useEffect(() => {
+      if (uid) {
+        const fetchUser = async () => {
+          try {
+            const q = query(collection(db, "users"), where("id", "==", uid));
+  
+            const querySnapshot = await getDocs(q);
+            const userFetchData = querySnapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            }));
+            console.log("setUserData : ", userFetchData);
+  
+            setUserData(userFetchData[0]);
+          } catch (error) {
+            console.error("Error fetching userFetchData:", error);
+          } finally {
+          }
+        };
+        fetchUser();
+      }
+    }, [uid]);
+
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
     <div className="bg-white w-full">
@@ -17,11 +45,17 @@ const Home = () => {
           <p className="text-gray-600 text-lg mb-8">
             Take a personalized skill test and start your journey with interactive modules tailored just for you.
           </p>
-          <Link to="/pre-quiz">
-            <button className="bg-primary text-white px-6 py-3 rounded-lg text-lg font-semibold shadow hover:bg-blue-700 transition">
+          {userData?.level === "None" &&  <Link to="/pre-quiz">
+            <button className="bg-primary text-white px-6 py-3 rounded-lg text-lg font-semibold shadow hover:bg-blue-700 transition mr-5">
               Let's Start Pre Quiz
             </button>
+          </Link>}
+          <Link to="/practice-quiz">
+            <button className="bg-primary text-white px-6 py-3 rounded-lg text-lg font-semibold shadow hover:bg-blue-700 transition">
+              Practice Quiz
+            </button>
           </Link>
+          
         </div>
 
         {/* Right Column - Banner Carousel */}

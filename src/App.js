@@ -28,6 +28,7 @@ import ModuleContentPage from "./pages/ModuleContentPage/ModuleContentPage";
 import ModuleQuiz from "./pages/ModuleQuiz/ModuleQuiz";
 import UserDashboard from "./pages/UserDashboard/UserDashboard";
 import Profile from "./pages/Profile/Profile";
+import PracticeQuiz from "./pages/PracticeQuiz/PracticeQuiz";
 
 const Layout = () => {
   return (
@@ -60,6 +61,7 @@ const router = createBrowserRouter(
         <Route path="/modules/:id" element={<SubModulesPage />}></Route>
         <Route path="/sub-module/:id" element={<ModuleContentPage />}></Route>
         <Route path="/pre-quiz" element={<QuizComponent />}></Route>
+        <Route path="/practice-quiz" element={<PracticeQuiz />}></Route>
         <Route path="/quiz/:id" element={<ModuleQuiz />}></Route>
         <Route path="/dashboard" element={<UserDashboard />}></Route>
         <Route path="/profile" element={<Profile />}></Route>

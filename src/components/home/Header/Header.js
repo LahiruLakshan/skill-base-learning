@@ -50,6 +50,7 @@ const Header = () => {
           }));
           console.log("setUserData : ", userFetchData);
 
+          localStorage.setItem("level", userFetchData[0].level);
           setUserData(userFetchData[0]);
         } catch (error) {
           console.error("Error fetching userFetchData:", error);
@@ -84,6 +85,13 @@ const Header = () => {
                     state={{ data: location.pathname.split("/")[1] }}
                   >
                     <li>Home</li>
+                  </NavLink>
+                  <NavLink
+                    className="flex font-normal hover:font-bold w-auto h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
+                    to={"/practice-quiz"}
+                    state={{ data: location.pathname.split("/")[1] }}
+                  >
+                    <li>Practice Quiz</li>
                   </NavLink>
                   { localStorage?.getItem("authToken") && userData?.level !== "None" && (
                     <NavLink

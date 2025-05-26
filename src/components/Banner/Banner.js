@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import {
-  bannerImgOne,
-} from "../../assets/images";
+import { bannerImgOne } from "../../assets/images";
 import Image from "../designLayouts/Image";
 
 const Banner = () => {
@@ -100,21 +98,15 @@ const Banner = () => {
   return (
     <div className="w-full  flex flex-col">
       <Slider {...settings}>
-        <Link to="/quiz">
-          <div className="flex flex-col justify-center">
-            <Image imgSrc={bannerImgOne} />
-          </div>
-        </Link>
-        <Link to="/quiz">
         <div className="flex flex-col justify-center">
-        <Image imgSrc={bannerImgOne} />
-          </div>
-        </Link>
-        <Link to="/quiz">
+          <Image imgSrc={bannerImgOne} className={"object-cover"} />
+        </div>
         <div className="flex flex-col justify-center">
-        <Image imgSrc={bannerImgOne} />
-          </div>
-        </Link>
+          <Image imgSrc={bannerImgOne} className={"object-cover"}/>
+        </div>
+        <div className="flex flex-col justify-center">
+          <Image imgSrc={bannerImgOne} className={"object-cover"}/>
+        </div>
       </Slider>
     </div>
   );
