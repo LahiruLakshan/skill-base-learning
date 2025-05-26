@@ -4,9 +4,11 @@ import QUIZDATA from "../../quiz.json";
 import { useNavigate } from "react-router-dom";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase";
+import axios from "axios";
 
 const PracticeQuiz = () => {
   const navigate = useNavigate();
+  const [showLearn, setShowLearn] = useState(false);
 
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -14,6 +16,8 @@ const PracticeQuiz = () => {
   const [submitted, setSubmitted] = useState(false);
   const [score, setScore] = useState(0);
   const [level, setLevel] = useState("");
+  const [aiResponse, setAiResponse] = useState("");
+  const [loadingAI, setLoadingAI] = useState(false);
 
   useEffect(() => {
     const shuffled = QUIZDATA.questions.sort(() => 0.5 - Math.random());
@@ -21,33 +25,71 @@ const PracticeQuiz = () => {
   }, []);
 
   const handleSubmit = () => {
-    const isCorrect =
-      selectedAnswer === questions[currentQuestionIndex].answer;
+    const isCorrect = selectedAnswer === questions[currentQuestionIndex].answer;
 
     if (isCorrect) {
       setScore(score + 10);
+    } else {
+      setShowLearn(true);
     }
+
     setSubmitted(true);
   };
 
   const handleNext = async () => {
     const nextIndex = currentQuestionIndex + 1;
     setCurrentQuestionIndex(nextIndex);
-      setSelectedAnswer("");
-      setSubmitted(false);
-}
+    setSelectedAnswer("");
+    setSubmitted(false);
+  };
   if (questions.length === 0) {
-    return <p className="text-center py-10 text-gray-500">Loading questions...</p>;
+    return (
+      <p className="text-center py-10 text-gray-500">Loading questions...</p>
+    );
   }
 
-
   const current = questions[currentQuestionIndex];
+
+  const fetchExplanationFromGPT = async () => {
+  const current = questions[currentQuestionIndex];
+  const prompt = `I selected the wrong answer "${selectedAnswer}" for the question: "${current.question}". Please explain why this answer is wrong and provide more context to help me learn.`;
+
+  setLoadingAI(true);
+  try {
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": "Bearer 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", // Replace with your actual key
+        "HTTP-Referer": "<YOUR_SITE_URL>",              // Optional
+        "X-Title": "<YOUR_SITE_NAME>",                  // Optional
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "deepseek/deepseek-chat:free",
+        messages: [
+          {
+            role: "user",
+            content: prompt,
+          }
+        ]
+      })
+    });
+
+    const data = await response.json();
+
+    const aiReply = data.choices?.[0]?.message?.content || "Sorry, no explanation returned.";
+    setAiResponse(aiReply);
+  } catch (error) {
+    console.error("Error fetching explanation:", error);
+    setAiResponse("Error fetching explanation. Please try again later.");
+  }
+  setLoadingAI(false);
+};
 
   return (
     <div className="p-6 max-w-2xl mx-auto min-h-[80vh]">
       <Card className="shadow-lg">
         <CardContent>
-
           <p className="text-lg font-semibold mb-4">
             Question {currentQuestionIndex + 1}: {current.question}
           </p>
@@ -108,16 +150,36 @@ const PracticeQuiz = () => {
         </CardContent>
       </Card>
 
-      
-
       {submitted && (
         <div className="text-center mt-4">
           {selectedAnswer === current.answer ? (
-            <p className="text-green-600 font-semibold">Correct! 🎉 +10 Marks</p>
-          ) : (
-            <p className="text-red-600 font-semibold">
-              Incorrect! Correct answer: <span className="font-bold">{current.answer}</span>
+            <p className="text-green-600 font-semibold">
+              Correct! 🎉 +10 Marks
             </p>
+          ) : (
+            <>
+              <p className="text-red-600 font-semibold">
+                Incorrect! Correct answer:{" "}
+                <span className="font-bold">{current.answer}</span>
+              </p>
+              {showLearn && (
+                <>
+                  <Button
+                    onClick={fetchExplanationFromGPT}
+                    className="bg-orange-500 hover:bg-orange-600 text-white px-6"
+                    disabled={loadingAI}
+                  >
+                    {loadingAI ? "Loading Explanation..." : "Learn More"}
+                  </Button>
+
+                  {aiResponse && (
+                    <div className="mt-4 p-4 bg-yellow-50 border border-yellow-300 rounded-lg text-left text-sm text-gray-800 whitespace-pre-wrap">
+                      {aiResponse}
+                    </div>
+                  )}
+                </>
+              )}
+            </>
           )}
         </div>
       )}

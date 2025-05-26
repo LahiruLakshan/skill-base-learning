@@ -62,7 +62,7 @@ const Header = () => {
   }, [uid]);
 
   return (
-    <div className="w-full h-20 bg-white sticky top-0 z-50 border-b-[1px] border-b-gray-200">
+    <div className="w-full h-50 bg-white sticky top-0 z-50 border-b-[1px] border-b-gray-200">
       <nav className="h-full px-4 max-w-container mx-auto relative">
         <Flex className="flex items-center justify-between h-full">
           <Link to="/">
@@ -86,31 +86,37 @@ const Header = () => {
                   >
                     <li>Home</li>
                   </NavLink>
-                  <NavLink
-                    className="flex font-normal hover:font-bold w-auto h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
-                    to={"/practice-quiz"}
-                    state={{ data: location.pathname.split("/")[1] }}
-                  >
-                    <li>Practice Quiz</li>
-                  </NavLink>
-                  { localStorage?.getItem("authToken") && userData?.level !== "None" && (
-                    <NavLink
-                      className="flex font-normal hover:font-bold w-auto h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
-                      to={"/modules"}
-                      state={{ data: location.pathname.split("/")[1] }}
-                    >
-                      <li>Modules</li>
-                    </NavLink>
-                  )}
-                  {localStorage?.getItem("authToken") && userData?.level !== "None" && (
-                    <NavLink
-                      className="flex font-normal hover:font-bold w-auto h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
-                      to={"/dashboard"}
-                      state={{ data: location.pathname.split("/")[1] }}
-                    >
-                      <li>Dashboard</li>
-                    </NavLink>
-                  )}
+                  {localStorage?.getItem("authToken") &&
+                    userData?.level !== "None" && (
+                      <NavLink
+                        className="flex font-normal hover:font-bold w-auto h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
+                        to={"/practice-quiz"}
+                        state={{ data: location.pathname.split("/")[1] }}
+                      >
+                        <li>Practice Quiz</li>
+                      </NavLink>
+                    )}
+
+                  {localStorage?.getItem("authToken") &&
+                    userData?.level !== "None" && (
+                      <NavLink
+                        className="flex font-normal hover:font-bold w-auto h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
+                        to={"/modules"}
+                        state={{ data: location.pathname.split("/")[1] }}
+                      >
+                        <li>Modules</li>
+                      </NavLink>
+                    )}
+                  {localStorage?.getItem("authToken") &&
+                    userData?.level !== "None" && (
+                      <NavLink
+                        className="flex font-normal hover:font-bold w-auto h-6 justify-center items-center px-12 text-base text-[#767676] hover:underline underline-offset-[4px] decoration-[1px] hover:text-[#262626] md:border-r-[2px] border-r-gray-300 hoverEffect last:border-r-0"
+                        to={"/dashboard"}
+                        state={{ data: location.pathname.split("/")[1] }}
+                      >
+                        <li>Dashboard</li>
+                      </NavLink>
+                    )}
                 </>
               </motion.ul>
             )}
@@ -160,12 +166,16 @@ const Header = () => {
               </div>
             )}
           </div>
-          {userData?.level && <div className="flex flex-col  ">
-            <div className=" text-grey text-sm text-center">Current Level</div>
-            <div className="bg-blue-800 text-white py-3 px-5 border rounded-lg text-center">
-              {userData?.level === "None"? "-":userData?.level}
+          {userData?.level && (
+            <div className="flex flex-col  ">
+              <div className=" text-grey text-sm text-center">
+                Current Level
+              </div>
+              <div className="bg-blue-800 text-white py-3 px-5 border rounded-lg text-center">
+                {userData?.level === "None" ? "-" : userData?.level}
+              </div>
             </div>
-          </div>}
+          )}
         </Flex>
       </nav>
     </div>

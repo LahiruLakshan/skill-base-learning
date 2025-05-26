@@ -59,78 +59,86 @@ Return only the output as a **raw JSON array** (no explanation, no extra wrappin
   // Randomly select 30 unique questions from the quiz data
   useEffect(() => {
     if (subModule) {
-    //   const fetchingData = async () => {
-    //     const response = await axios.post(
-    //       "https://api.openai.com/v1/chat/completions",
-    //       {
-    //         model: "gpt-4",
-    //         messages: [
-    //           {
-    //             role: "user",
-    //             content: generateQuizPrompt(
-    //               subModule.module_title,
-    //               subModule.level,
-    //               10,
-    //               stripHtmlTags(subModule.sub_module_content)
-    //             ),
-    //           },
-    //         ],
-    //       },
-    //       {
-    //         headers: {
-    //           Authorization: `Bearer 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`,
-    //           "Content-Type": "application/json",
-    //         },
-    //       }
-    //     );
-
-    //     console.log(
-    //       "response : ",
-    //       JSON.parse(response.data.choices[0].message.content)
-    //     );
-    //     setQuestions(JSON.parse(response.data.choices[0].message.content));
-    //   };
-    const fetchingData = async () => {
+      async function fetchingData() {
   try {
-    const data = JSON.stringify({
-      "input_value": generateQuizPrompt(
-        subModule.module_title,
-        subModule.level,
-        10,
-        stripHtmlTags(subModule.sub_module_content)
-      ),
-      "output_type": "chat",
-      "input_type": "chat",
-      "tweaks": {
-        "ChatInput-fKs21": {},
-        "Prompt-eDgZg": {},
-        "ChatOutput-j3uHn": {},
-        "GoogleGenerativeAIModel-K5A6S": {}
-      }
-    });
-
-    const config = {
-      method: 'post',
-      url: 'https://api.langflow.astra.datastax.com/lf/628e491a-ce21-4264-b7a1-cb49a4e75323/api/v1/run/faa4d895-cd01-4ac6-966d-b6af9837391f?stream=false',
-      headers: { 
-        'Content-Type': 'application/json', 
-        'Authorization': 'Bearer AstraCS:ydELKUJnGNhYFXSNpLWCerBM:1caf8564f69e7eb17e7e6543cf8f9953ef8774a8f14b59b686a65a43267f4512'
+    const response = await axios.post(
+      "https://openrouter.ai/api/v1/chat/completions",
+      {
+        model: "deepseek/deepseek-chat:free", // Or any other model from OpenRouter
+        messages: [
+          {
+            role: "user",
+            content: generateQuizPrompt(
+              subModule.module_title,
+              subModule.level,
+              10,
+              stripHtmlTags(subModule.sub_module_content)
+            ),
+          },
+        ],
       },
-      data: data
-    };
+      {
+        headers: {
+          Authorization: "Bearer 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", // Replace with your real key
+          "Content-Type": "application/json",
+          "HTTP-Referer": "<YOUR_SITE_URL>", // Optional
+          "X-Title": "<YOUR_SITE_NAME>", // Optional
+        },
+      }
+    );
 
-    const response = await axios(config);
-    const quizData = JSON.parse(response.data.output);
-    setQuestions(quizData);
+    const parsedContent = JSON.parse(
+      response.data.choices[0].message.content
+    );
+    console.log("response:", parsedContent);
+    setQuestions(parsedContent);
   } catch (error) {
-    console.error("Error fetching quiz data:", error);
-    // Fallback to local questions if API fails
-    const allQuestions = QUIZDATA.questions;
-    const shuffledQuestions = allQuestions.sort(() => 0.5 - Math.random());
-    const selectedQuestions = shuffledQuestions.slice(0, 10);
-    setQuestions(selectedQuestions);
+    console.error("Error fetching data:", error.response?.data || error.message);
   }
-};  
+}
+//     const fetchingData = async () => {
+//   try {
+//     const data = JSON.stringify({
+//       "input_value": generateQuizPrompt(
+//         subModule.module_title,
+//         subModule.level,
+//         10,
+//         stripHtmlTags(subModule.sub_module_content)
+//       ),
+//       "output_type": "chat",
+//       "input_type": "chat",
+//       "tweaks": {
+//         "ChatInput-fKs21": {},
+//         "Prompt-eDgZg": {},
+//         "ChatOutput-j3uHn": {},
+//         "GoogleGenerativeAIModel-K5A6S": {}
+//       }
+//     });
+
+//     const config = {
+//       method: 'post',
+//       url: 'https://api.langflow.astra.datastax.com/lf/628e491a-ce21-4264-b7a1-cb49a4e75323/api/v1/run/faa4d895-cd01-4ac6-966d-b6af9837391f?stream=false',
+//       headers: { 
+//         'Content-Type': 'application/json', 
+//         'Authorization': 'Bearer AstraCS:ydELKUJnGNhYFXSNpLWCerBM:1caf8564f69e7eb17e7e6543cf8f9953ef8774a8f14b59b686a65a43267f4512'
+//       },
+//       data: data
+//     };
+
+//     const response = await axios(config);
+//     const quizData = JSON.parse(response.data.output);
+//     console.log("quizData : ", quizData);
+    
+//     setQuestions(quizData);
+//   } catch (error) {
+//     console.error("Error fetching quiz data:", error);
+//     // Fallback to local questions if API fails
+//     const allQuestions = QUIZDATA.questions;
+//     const shuffledQuestions = allQuestions.sort(() => 0.5 - Math.random());
+//     const selectedQuestions = shuffledQuestions.slice(0, 10);
+//     setQuestions(selectedQuestions);
+//   }
+// };  
     fetchingData();
     }
 
@@ -269,42 +277,42 @@ Return only the output as a **raw JSON array** (no explanation, no extra wrappin
     }
   };
 
-  const fetchExplanationFromGPT = async () => {
+ const fetchExplanationFromGPT = async () => {
   const current = questions[currentQuestionIndex];
   const prompt = `I selected the wrong answer "${selectedAnswer}" for the question: "${current.question}". Please explain why this answer is wrong and provide more context to help me learn.`;
 
   setLoadingAI(true);
   try {
-    const data = JSON.stringify({
-      "input_value": prompt,
-      "output_type": "chat",
-      "input_type": "chat",
-      "tweaks": {
-        "ChatInput-fKs21": {},
-        "Prompt-eDgZg": {},
-        "ChatOutput-j3uHn": {},
-        "GoogleGenerativeAIModel-K5A6S": {}
-      }
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": "Bearer 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", // Replace with your actual key
+        "HTTP-Referer": "<YOUR_SITE_URL>",              // Optional
+        "X-Title": "<YOUR_SITE_NAME>",                  // Optional
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        model: "deepseek/deepseek-chat:free",
+        messages: [
+          {
+            role: "user",
+            content: prompt,
+          }
+        ]
+      })
     });
 
-    const config = {
-      method: 'post',
-      url: 'https://api.langflow.astra.datastax.com/lf/628e491a-ce21-4264-b7a1-cb49a4e75323/api/v1/run/faa4d895-cd01-4ac6-966d-b6af9837391f?stream=false',
-      headers: { 
-        'Content-Type': 'application/json', 
-        'Authorization': 'Bearer AstraCS:ydELKUJnGNhYFXSNpLWCerBM:1caf8564f69e7eb17e7e6543cf8f9953ef8774a8f14b59b686a65a43267f4512'
-      },
-      data: data
-    };
+    const data = await response.json();
 
-    const response = await axios(config);
-    setAiResponse(response.data.output || "Sorry, could not fetch explanation.");
+    const aiReply = data.choices?.[0]?.message?.content || "Sorry, no explanation returned.";
+    setAiResponse(aiReply);
   } catch (error) {
     console.error("Error fetching explanation:", error);
     setAiResponse("Error fetching explanation. Please try again later.");
   }
   setLoadingAI(false);
 };
+
 
 //   const fetchExplanationFromGPT = async () => {
 //     const current = questions[currentQuestionIndex];

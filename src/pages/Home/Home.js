@@ -50,11 +50,7 @@ const Home = () => {
               Let's Start Pre Quiz
             </button>
           </Link>}
-          <Link to="/practice-quiz">
-            <button className="bg-primary text-white px-6 py-3 rounded-lg text-lg font-semibold shadow hover:bg-blue-700 transition">
-              Practice Quiz
-            </button>
-          </Link>
+         
           
         </div>
 
