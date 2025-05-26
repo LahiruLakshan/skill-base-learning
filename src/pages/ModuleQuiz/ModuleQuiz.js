@@ -14,6 +14,7 @@ import {
   addDoc,
   getDoc,
 } from "firebase/firestore";
+import { DEEPSEEK } from "../../constants/config";
 
 const ModuleQuiz = () => {
   const location = useLocation();
@@ -79,7 +80,7 @@ Return only the output as a **raw JSON array** (no explanation, no extra wrappin
       },
       {
         headers: {
-          Authorization: "Bearer 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", // Replace with your real key
+          Authorization: `Bearer ${DEEPSEEK}`, // Replace with your real key
           "Content-Type": "application/json",
           "HTTP-Referer": "<YOUR_SITE_URL>", // Optional
           "X-Title": "<YOUR_SITE_NAME>", // Optional
@@ -286,7 +287,7 @@ Return only the output as a **raw JSON array** (no explanation, no extra wrappin
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": "Bearer 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", // Replace with your actual key
+        "Authorization": `Bearer ${DEEPSEEK}`, // Replace with your actual key
         "HTTP-Referer": "<YOUR_SITE_URL>",              // Optional
         "X-Title": "<YOUR_SITE_NAME>",                  // Optional
         "Content-Type": "application/json"

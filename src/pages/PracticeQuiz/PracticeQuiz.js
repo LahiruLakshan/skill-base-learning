@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase";
 import axios from "axios";
+import { DEEPSEEK } from "../../constants/config";
 
 const PracticeQuiz = () => {
   const navigate = useNavigate();
@@ -59,7 +60,7 @@ const PracticeQuiz = () => {
     const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
       method: "POST",
       headers: {
-        "Authorization": "Bearer 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", // Replace with your actual key
+        "Authorization": `Bearer ${DEEPSEEK}`, // Replace with your actual key
         "HTTP-Referer": "<YOUR_SITE_URL>",              // Optional
         "X-Title": "<YOUR_SITE_NAME>",                  // Optional
         "Content-Type": "application/json"

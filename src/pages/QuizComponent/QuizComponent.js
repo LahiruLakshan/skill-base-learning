@@ -215,7 +215,7 @@ const QuizComponent = () => {
                 <span className="font-bold">{current.answer}</span>
               </p>
 
-              {showLearn && (
+              {/* {showLearn && (
                 <>
                   <Button
                     onClick={fetchExplanationFromGPT}
@@ -231,7 +231,7 @@ const QuizComponent = () => {
                     </div>
                   )}
                 </>
-              )}
+              )} */}
             </>
           )}
         </div>
